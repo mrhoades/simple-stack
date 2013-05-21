@@ -141,7 +141,7 @@ function nova_except_compute {
 
 function tempest {
   local tempest_branch=$(os-config-applier --key tempest.release)
-  os-svc-install -n tempest -u tempest -r https://github.com/openstack/tempest.git -b $tempest_branch
+  git clone https://github.com/openstack/tempest.git -b $tempest_branch /opt/stack/tempest
 }
 
 function ip_forwarding {
